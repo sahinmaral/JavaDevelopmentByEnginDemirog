@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name="job_positions")
-public class JobPosition{
+@Table(name="job_titles")
+public class JobTitle {
 
     @Id
     @GeneratedValue
@@ -21,8 +21,8 @@ public class JobPosition{
     private int id;
 
 
-    @Column(name="name")
-    private String name;
+    @Column(name="title")
+    private String titles;
 
 
 }
