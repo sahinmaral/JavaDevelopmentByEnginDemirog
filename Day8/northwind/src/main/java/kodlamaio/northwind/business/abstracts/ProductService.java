@@ -3,7 +3,6 @@ package kodlamaio.northwind.business.abstracts;
 import kodlamaio.northwind.core.utilities.result.DataResult;
 import kodlamaio.northwind.core.utilities.result.Result;
 import kodlamaio.northwind.entities.concretes.Product;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
