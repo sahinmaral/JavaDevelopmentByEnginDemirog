@@ -8,11 +8,14 @@ import kodlamaio.hrms.dataAccess.abstracts.EmployerDao;
 import kodlamaio.hrms.entities.concretes.Employer;
 
 public class EmployerValidator extends UserValidator {
+
     private EmployerDao employerDao;
 
     public EmployerValidator(EmployerDao employerDao) {
         this.employerDao = employerDao;
     }
+
+
     public Result areAllInformationFilledOnRegister(Employer employer) {
         if
         (
@@ -36,6 +39,16 @@ public class EmployerValidator extends UserValidator {
                 return new ErrorResult(Messages.EmailAlreadyTaken);
         }
         return new SuccessResult();
+    }
+
+    public Result isEmployerExist(int employerId){
+        var employers = employerDao.findAll();
+        for(var employer : employers){
+            if (employer.getId()==employerId)
+                return new SuccessResult();
+        }
+
+        return new ErrorResult(Messages.EmployerDoesntExist);
     }
 
 }

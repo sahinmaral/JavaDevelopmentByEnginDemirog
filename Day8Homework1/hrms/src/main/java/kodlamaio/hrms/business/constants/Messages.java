@@ -15,4 +15,11 @@ public class Messages {
     public static String SuccessfullyRetrieved = "Başarılı bir şekilde listelendi";
     public static String JobAdvertNotFound = "İş ilanı bulunamadı";
     public static String JobAdvertDisabled = "İş ilanı devredışı bırakıldı";
+    public static String JobAdvertAlreadyDisabled = "İş ilanı zaten devredışı";
+    public static String JobAdvertDoesntExist = "İş ilanı bulunamadı";
+    public static String JobAdvertAlreadyEnabled = "İş ilanı zaten devrede";
+    public static String JobAdvertEnabled = "İş ilanı devrede";
+    public static String CityDoesntExist = "Şehir bulunamadı";
+    public static String JobPositionDoesntExist = "İş pozisyonu bulunamadı";
+    public static String EmployerDoesntExist = "İş veren bulunamadı";
 }

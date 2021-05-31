@@ -14,8 +14,12 @@ import javax.persistence.*;
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="city_id")
+    @Column(name="id")
     private int id;
-    @Column(name="city_name")
+
+    @Column(name="name")
     private String name;
+
+
+
 }

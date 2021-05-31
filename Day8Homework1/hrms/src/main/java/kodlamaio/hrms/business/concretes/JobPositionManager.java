@@ -2,7 +2,7 @@ package kodlamaio.hrms.business.concretes;
 
 import kodlamaio.hrms.business.abstracts.JobPositionService;
 import kodlamaio.hrms.business.constants.Messages;
-import kodlamaio.hrms.business.validationRules.JobTitleValidator;
+import kodlamaio.hrms.business.validationRules.JobPositionValidator;
 import kodlamaio.hrms.core.utilities.result.*;
 import kodlamaio.hrms.dataAccess.abstracts.JobPositionDao;
 import kodlamaio.hrms.entities.concretes.JobPosition;
@@ -35,7 +35,7 @@ class JobPositionManager implements JobPositionService {
                 return new ErrorResult(Messages.PositionAlreadyAdded);
         }
 
-        JobTitleValidator validator = new JobTitleValidator();
+        JobPositionValidator validator = new JobPositionValidator(jobPositionDao);
         Result[] validators = new Result[]{
                 validator.isTitleFilled(entity.getTitle()),
         };
