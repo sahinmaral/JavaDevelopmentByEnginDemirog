@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "programming_technologies")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","candidateKnowledges"})
 public class ProgrammingTechnology {
 
     @Id
@@ -25,7 +27,6 @@ public class ProgrammingTechnology {
     @Column(name = "name" , unique = true , length = 50)
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "programmingTechnology")
+    @OneToMany(mappedBy = "programmingTechnology" , fetch = FetchType.LAZY)
     private List<CandidateKnowledge> candidateKnowledges;
 }

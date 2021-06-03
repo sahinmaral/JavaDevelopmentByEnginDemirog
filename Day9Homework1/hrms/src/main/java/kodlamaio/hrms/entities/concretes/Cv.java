@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import kodlamaio.hrms.core.entities.Candidate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,33 +41,30 @@ public class Cv {
     @JoinColumn(name="candidate_id")
     private Candidate candidate;
 
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "cv")
-    private List<CandidateForeignLanguage> candidateForeignLanguages;
-
-
-    @JsonIgnore
     @OneToMany(mappedBy = "cv",
             cascade = CascadeType.ALL,
-            orphanRemoval = true)
+            orphanRemoval = true ,
+            fetch = FetchType.LAZY)
+    private List<CandidateForeignLanguage> candidateForeignLanguages;
+
+    @OneToMany(mappedBy = "cv",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true , fetch = FetchType.LAZY)
     private List<CandidateKnowledge> candidateKnowledges;
 
-    @JsonIgnore
     @OneToMany(
             mappedBy = "cv",
             cascade = CascadeType.ALL,
-            orphanRemoval = true)
+            orphanRemoval = true , fetch = FetchType.LAZY)
     private List<JobHistory> jobHistories;
 
-    @JsonIgnore
     @OneToMany(
             mappedBy = "cv",
             cascade = CascadeType.ALL,
-            orphanRemoval = true)
+            orphanRemoval = true , fetch = FetchType.LAZY)
     private List<School> schools;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @JoinColumn(name="image_id" , referencedColumnName = "id")
     private Image image;
 

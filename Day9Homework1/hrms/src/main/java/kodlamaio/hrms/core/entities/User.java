@@ -1,5 +1,6 @@
 package kodlamaio.hrms.core.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import kodlamaio.hrms.business.constants.Messages;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,7 +40,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name="password_repeat")
+    @JsonDeserialize
+    @Transient
     @NotEmpty()
     private String passwordRepeat;
 

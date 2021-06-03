@@ -28,7 +28,7 @@ public class City {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "cities")
+    @OneToMany(mappedBy = "cities" , fetch = FetchType.LAZY)
     private List<JobAdvert> jobadvert;
 
 }

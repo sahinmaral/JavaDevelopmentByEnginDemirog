@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="job_positions")
-
+@JsonIgnoreProperties(value={"hibernateLazyInitializer", "handler","jobAdvert","jobHistories"})
 public class JobPosition {
 
     @Id
@@ -28,12 +28,11 @@ public class JobPosition {
     @Column(name="is_active")
     private boolean isActive = true;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "jobPositions")
-    private List<JobAdvert> jobadvert;
+    @OneToMany(mappedBy = "jobPositions" , fetch = FetchType.LAZY)
+    private List<JobAdvert> jobAdvert;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "jobPosition")
+
+    @OneToMany(mappedBy = "jobPosition" , fetch = FetchType.LAZY)
     private List<JobHistory> jobHistories;
 
 }

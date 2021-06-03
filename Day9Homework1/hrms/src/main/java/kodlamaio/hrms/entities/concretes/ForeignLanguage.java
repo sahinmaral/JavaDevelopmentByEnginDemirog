@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="foreign_languages")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","candidateForeignLanguages"})
 public class ForeignLanguage {
 
     @Id
@@ -25,8 +27,7 @@ public class ForeignLanguage {
     @Column(name="name")
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "foreignLanguage")
+    @OneToMany(mappedBy = "foreignLanguage" , fetch = FetchType.LAZY)
     private List<CandidateForeignLanguage> candidateForeignLanguages;
 
 }
