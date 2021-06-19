@@ -1,0 +1,24 @@
+<html>
+    <body>
+
+
+
+        <script>
+            function Person(firstName,lastName){ //constructor
+                this.firstName = firstName //public
+                this.lastName = lastName
+            }
+
+            function Student(favouriteCourse) {
+                this.favouriteCourse = favouriteCourse
+            }
+
+            Student.prototype = new Person("Şahin","MARAL")
+            
+            var student = new Student("Programming")
+            
+            alert(student.firstName + " " + student.favouriteCourse)
+
+        </script>
+    </body>
+</html>

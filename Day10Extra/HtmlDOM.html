@@ -1,0 +1,46 @@
+<html>
+
+    <style type="text/css">
+    .intro1{
+        background-color: blue;
+    }
+    </style>
+
+    <body>
+
+        Header : <label id="header"></label>
+
+        <ul>
+            <li>This is list 1</li>
+            <li>This is list 2</li>
+            <li>This is list 3</li>
+        </ul>
+
+        <button type="button" class="intro1">Button</button>
+        <br><br>
+        Button label :  <label id="label2"></label>
+
+        <script type="text/javascript">
+            var header = document.getElementById("header")
+            header.innerHTML = "This is a method of HTML DOM"
+
+            var allUnorderedLists = document.getElementsByTagName("ul")
+            var unorderedList =  allUnorderedLists[0]
+            var allLists = unorderedList.getElementsByTagName("li")
+            
+            for (let i = 0; i < allLists.length; i++) {
+                allLists[i].innerHTML = "List " + i + " is changed"
+                //allLists[i].firstChild.data = "List " + i + " is changed"
+
+                //Same thing
+            }
+            
+            var button = document.getElementsByClassName("intro1")
+            
+
+            var buttonLabel = document.getElementById("label2")
+            buttonLabel.innerHTML = button[0].innerHTML
+
+        </script>
+    </body>
+</html>

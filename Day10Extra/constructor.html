@@ -1,0 +1,33 @@
+<html>
+    <body>
+
+    </body>
+
+
+    <script>
+        var student = {
+            firstName : "Şahin",
+            lastName : "MARAL",
+            fullName : function(){
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        alert(student.fullName())
+
+        function Customer(first,lastName,city){
+            this.firstName = first,
+            this.lastName = lastName,
+            this.city = city
+        }
+
+        //first is like alias , property of customer is 'firstname' not first
+        var someCustomer = new Customer("Şahin","MARAL","İstanbul")
+
+        alert(someCustomer.firstName)
+        
+        
+
+
+    </script>
+</html>

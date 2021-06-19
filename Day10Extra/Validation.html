@@ -1,0 +1,22 @@
+
+<html>
+    <body>
+        <p>Enter a number</p>
+        <input id="numberBox" type="number" min=10 max=100>
+        <button onclick="validate()">Send</button>
+        <p id="demo"></p>
+        <script>
+            function validate(){
+                var numberEntered = document.getElementById("numberBox")
+
+                if (!numberEntered.checkValidity()) {
+                    document.getElementById("demo").innerHTML = numberEntered.validationMessage
+                }
+                else{
+                    document.getElementById("demo").innerHTML = "Input OK"
+
+                }
+            }
+        </script>
+    </body>
+</html>

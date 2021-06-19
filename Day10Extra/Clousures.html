@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <button type="button" onclick="alert(add())">Add Function Button</button>
+        <br>
+        <br>
+        <button type="button" onclick="alert(otherFunction())">Other Function Button</button>
+        <script>
+            var counter=0
+            //add (first one) method and otherFunction method can access this global variable
+            //this is a dangerous situation , it can conflict with other functions
+
+            // function add(){
+                
+            //     counter+=1
+            //     return counter
+            // }
+
+            function otherFunction(){
+                counter+=10
+            }
+
+            var add = (function(){
+                var counter = 0
+                return function (){
+                    return counter += 1
+                }
+            })()
+
+        </script>
+    </body>
+</html>

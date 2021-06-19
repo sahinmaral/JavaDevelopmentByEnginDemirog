@@ -1,0 +1,39 @@
+<html>
+    <body>
+
+        <div id="div1">
+            <p id="p1">This is first paragraph</p>
+            <p id="p2">This is second paragraph</p>
+            <p id="p3">This is third paragraph</p>
+        </div>
+
+        
+
+
+        <script>
+
+            var p1 = document.getElementById("p1").childNodes[0].nodeValue
+            alert(p1)
+
+            var heading = document.createElement("h2")
+            var node = document.createTextNode("Hello Javascript")
+            heading.appendChild(node)
+
+            var div1 = document.getElementById("div1")  
+            var p2 = document.getElementById("p2")
+            div1.insertBefore(heading,p2)
+
+            alert("Removing p2")
+            div1.removeChild(p2)
+
+            alert("Replacing ")
+            var heading2 = document.createElement("h1")
+            var node2 = document.createTextNode("This is a replacement")
+            heading.appendChild(node2)
+
+            var p1 = document.getElementById("p1")
+            div1.replaceChild(heading2,p1)
+
+        </script>
+    </body>
+</html>

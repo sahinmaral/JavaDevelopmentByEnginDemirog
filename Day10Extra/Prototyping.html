@@ -1,0 +1,26 @@
+<html>
+    <body>
+
+    </body>
+
+    <script>
+
+        function Customer(first,last,city){
+            this.first = first,
+            this.last = last,
+            this.city = city
+        }
+
+        var someCustomer = new Customer("Şahin","MARAL","İstanbul")
+
+        Customer.prototype.email = "sahinmaral@hotmail.com"
+        Customer.prototype.fullName = function(){
+            return this.first + " " + this.last
+        }
+
+        alert(someCustomer.city)
+        alert(someCustomer.email)
+        alert(someCustomer.fullName())
+
+    </script>
+</html>

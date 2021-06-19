@@ -1,0 +1,28 @@
+<html>
+    <body>
+
+
+
+        <script>
+            function Customer(firstName,lastName){ //constructor
+                this.firstName = firstName //public
+                this.lastName = lastName
+
+                var someField = "some value" //private 
+
+                this.sendProduct = function(){ //operation
+                    alert("Product sent!")
+                }
+            }
+
+            var customer = new Customer("Şahin","MARAL")
+            
+            alert(customer.someField) //it will display "undefined" because of private access
+
+            alert(customer.firstName + " " + customer.lastName)
+
+            customer.sendProduct()
+
+        </script>
+    </body>
+</html>
