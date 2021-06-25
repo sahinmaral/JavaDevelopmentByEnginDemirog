@@ -6,6 +6,8 @@ let products = [
     {id:5, name : "Casper Laptop", unitPrice:17000},
 ]
 
+
+
 console.log("<ul>")
 products.map(product=>console.log(`<li>${product.name}</li>`))
 console.log("</ul>")

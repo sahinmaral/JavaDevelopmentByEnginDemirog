@@ -9,8 +9,8 @@ console.log(high)
 console.log(veryHigh)
 console.log(maximum)
 
-function someFunction([small1],number){
-    console.log(small1)
+function someFunction([small1,medium1],number){
+    console.log(small1,medium1)
 }
 
 someFunction(populations)
@@ -20,7 +20,10 @@ let category = {id:1,name:"İçecek"}
 console.log(category.id)
 console.log(category["name"])
 
+let categoryName = category["name"]
+
 let {id,name} = category
 
+console.log(categoryName)
 console.log(id)
 console.log(name)
